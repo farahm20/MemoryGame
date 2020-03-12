@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet"  href="css/style.css" type="text/css">
+    <link rel="stylesheet" href="css/font-awesome/css/all.css">
+    <title>MemoryGame</title>
+</head>
+<body>
+    <header>
+        <div class = "scorePanel">
+            <div class ="score" id = "score1"><button>Points </button> </div>
+            <div class = "refresh" id = "refresh1"><button><a href="#"><i class="fas fa-redo-alt"></i></a></button></div>
+        </div>
+    </header>
+    <section class = "memoryGame">
+        <div class = "hiddenOverlay" id = overLayer>
+            <div class = "overLay" >
+                <h2>You Won!</h2>
+            </div>
+        </div>
+
+
+        <div class = "allButtons">
+            <article class="button" id= "flip-card">
+                <div class="flip-card-front" id = "flip-card-front">
+                    <h1 id = "flip-card-to-back"> Memory Game</h1>
+                </div>
+                <div class="flip-card-back" id = "flip-card-toFront">
+                    <h1 id = "flip-card-to-front" class = "toChange" > 1 </h1>
+                </div>
+            </article>
+        
+            <article class="button" id= "flip-card">
+                <div class="flip-card-front" id = "flip-card-front">
+                    <h1 id = "flip-card-btn-turn-to-back"> Memory Game</h1>
+                </div>
+                <div class="flip-card-back" id = "flip-card-toFront">
+                    <h1 id = "flip-card-btn-turn-to-front" class = "toChange" > 1 </h1>
+                </div>
+            </article>
+            
+            <article class="button" id= "flip-card">
+                <div class="flip-card-front" id = "flip-card-front">
+                    <h1 id = "flip-card-btn-turn-to-back"> Memory Game</h1>
+                </div>
+                <div class="flip-card-back" id = "flip-card-toFront">
+                    <h1 id = "flip-card-btn-turn-to-front" class = "toChange" > 1 </h1>
+                </div>
+            </article>
+            
+            <article class="button" id= "flip-card">
+                <div class="flip-card-front" id = "flip-card-front">
+                    <h1 id = "flip-card-btn-turn-to-back"> Memory Game</h1>
+                </div>
+                <div class="flip-card-back" id = "flip-card-toFront">
+                    <h1 id = "flip-card-btn-turn-to-front" class = "toChange" > 1 </h1>
+                </div>
+            </article>
+  <!--  
+            <article class="button" id= "flip-card">
+                <div class="flip-card-front" id = "flip-card-front">
+                    <h1 id = "flip-card-btn-turn-to-back"> Memory Game</h1>
+                </div>
+                <div class="flip-card-back" id = "flip-card-toFront">
+                    <h1 id = "flip-card-btn-turn-to-front" class = "toChange" > 1 </h1>
+                </div>
+            </article>
+            
+            <article class="button" id= "flip-card">
+                <div class="flip-card-front" id = "flip-card-front">
+                    <h1 id = "flip-card-btn-turn-to-back"> Memory Game</h1>
+                </div>
+                <div class="flip-card-back" id = "flip-card-toFront">
+                    <h1 id = "flip-card-btn-turn-to-front" class = "toChange" > 1 </h1>
+                </div>
+            </article>
+            
+            <article class="button" id= "flip-card">
+                <div class="flip-card-front" id = "flip-card-front">
+                    <h1 id = "flip-card-btn-turn-to-back"> Memory Game</h1>
+                </div>
+                <div class="flip-card-back" id = "flip-card-toFront">
+                    <h1 id = "flip-card-btn-turn-to-front" class = "toChange" > 1 </h1>
+                </div>
+            </article>
+            
+            <article class="button" id= "flip-card">
+                <div class="flip-card-front" id = "flip-card-front">
+                    <h1 id = "flip-card-btn-turn-to-back"> Memory Game</h1>
+                </div>
+                <div class="flip-card-back" id = "flip-card-toFront">
+                    <h1 id = "flip-card-btn-turn-to-front" class = "toChange" > 1 </h1>
+                </div>
+            </article>
+            
+            <article class="button" id= "flip-card">
+                <div class="flip-card-front" id = "flip-card-front">
+                    <h1 id = "flip-card-btn-turn-to-back"> Memory Game</h1>
+                </div>
+                <div class="flip-card-back" id = "flip-card-toFront">
+                    <h1 id = "flip-card-btn-turn-to-front" class = "toChange" > 1 </h1>
+                </div>
+            </article>
+             
+            <article class="button" id= "flip-card">
+                <div class="flip-card-front" id = "flip-card-front">
+                    <h1 id = "flip-card-btn-turn-to-back"> Memory Game</h1>
+                </div>
+                <div class="flip-card-back" id = "flip-card-toFront">
+                    <h1 id = "flip-card-btn-turn-to-front" class = "toChange" > 1 </h1>
+                </div>
+            </article>
+
+            <article class="button" id= "flip-card">
+                <div class="flip-card-front" id = "flip-card-front">
+                    <h1 id = "flip-card-btn-turn-to-back"> Memory Game</h1>
+                </div>
+                <div class="flip-card-back" id = "flip-card-toFront">
+                    <h1 id = "flip-card-btn-turn-to-front" class = "toChange" > 1 </h1>
+                </div>
+            </article>
+
+             <article class="button" id= "flip-card">
+                <div class="flip-card-front" id = "flip-card-front">
+                    <h1 id = "flip-card-btn-turn-to-back"> Memory Game</h1>
+                </div>
+                <div class="flip-card-back" id = "flip-card-toFront">
+                    <h1 id = "flip-card-btn-turn-to-front" class = "toChange" > 1 </h1>
+                </div>
+            </article>
+
+            <article class="button" id= "flip-card">
+                <div class="flip-card-front" id = "flip-card-front">
+                    <h1 id = "flip-card-btn-turn-to-back"> Memory Game</h1>
+                </div>
+                <div class="flip-card-back" id = "flip-card-toFront">
+                    <h1 id = "flip-card-btn-turn-to-front" class = "toChange" > 1 </h1>
+                </div>
+            </article>
+
+            <article class="button" id= "flip-card">
+                <div class="flip-card-front" id = "flip-card-front">
+                    <h1 id = "flip-card-btn-turn-to-back"> Memory Game</h1>
+                </div>
+                <div class="flip-card-back" id = "flip-card-toFront">
+                    <h1 id = "flip-card-btn-turn-to-front" class = "toChange" > 1 </h1>
+                </div>
+            </article>
+
+            <article class="button" id= "flip-card">
+                <div class="flip-card-front" id = "flip-card-front">
+                    <h1 id = "flip-card-btn-turn-to-back"> Memory Game</h1>
+                </div>
+                <div class="flip-card-back" id = "flip-card-toFront">
+                    <h1 id = "flip-card-btn-turn-to-front" class = "toChange" > 1 </h1>
+                </div>
+            </article>
+
+            <article class="button" id= "flip-card">
+                <div class="flip-card-front" id = "flip-card-front">
+                    <h1 id = "flip-card-btn-turn-to-back"> Memory Game</h1>
+                </div>
+                <div class="flip-card-back" id = "flip-card-toFront">
+                    <h1 id = "flip-card-btn-turn-to-front" class = "toChange" > 1 </h1>
+                </div>
+            </article>
+      -->      
+            
+        </div>
+    </section> <!---End of memoryGame-->
+    <script src="js/index.js"></script>
+</body>
+</html>
