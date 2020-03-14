@@ -1,145 +1,139 @@
-*{
-    box-sizing: border-box;
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
 
 body {
     background-color: rgb(219, 213, 213);
-    max-height: 500vh;
-    max-width: 500vw;
+    height: 100vh;
     display: flex;
-    align-content: center;
-    justify-content: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;  
 }
 
 .memoryGame {
-    width: 1100px;
-    height: 1000px;
-    
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center; 
+  width: 500px;
+  height: 500px;
+  /* margin: auto; */
+  display: flex;
+
+  /* flex-wrap: wrap; */
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  perspective: 1000px;
+    /*to add a 3d flip effect. 1000px is how far the element is in z-plane**/
 }
 
-.scorePanel{
-/*    position: absolute;*/
-    width: 100%;
-    padding: 10px;
-    margin-bottom: x;
-    display: flex;
-    justify-content: space-between;
+.memoryCard {
+  position: relative;
+  margin: 5px;
+  box-shadow: 1px 1px 0 rgba(0, 0, 0, .3);
+  /**animation**/
+  transform: scale(1);
+  transform-style: preserve-3d; /*based on perspective added above this will position it in 3d space*/
+  transition: transform .5s; /*moves the card*/
 }
 
-.scorePanel button {
-    border-radius: 30px;
-    font-family: monospace;
-    font-size: 21px;
-    padding: 1rem;
-    margin-top: -1rem;
-    margin-left: -1rem;
-    background: slategrey;
-    outline: none;
-    border: 1px solid grey;
-    box-shadow: 2px 1px grey;
-    font-weight: 600;
-    color: whitesmoke;
+/**animation when mouse goes over the card**/
+.memoryCard:active {
+  transform: scale(0.95);
+  transition: transform .2s;
 }
 
-.allButtons {
+.frontFace,
+.backFace {
+  width: 100%;
+  height: 100%;
+  padding: 10px;
+  position: absolute;
+  border-radius: 5px;
+  background: #095a5a;
+  box-shadow: 4px 2px 2px 1px grey; 
+  color:  rgb(244, 205, 88);
 
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
+  backface-visibility: hidden; /*to see the back side of the card*/
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-#flip-card {
-    width: 200px;
-    height: 200px;
-    text-align: center;
-    margin: 50px auto;
+h1 {
+  font-family: oswald;
+  font-size: 13px;
+  font-weight: 600;
+}
 
-    transition: all 1s ease-in-out;
-    transform-style: preserve-3d;
-  
-    margin: 12px 12px;
-  }
-  
-  .do-flip {
-   transform: rotateY(-180deg);
-  }
+.frontFace {
+  transform: rotateY(180deg);/*rotating the number side at 180deg. so it appears  on backside of card*/
+}
 
-  #flip-card .flip-card-front, #flip-card .flip-card-back{
-    width: 100%;
-    height: 100%;
-    position: absolute;
-  
-    backface-visibility: hidden;
-    z-index: 2;
-    box-shadow: 5px 6px 32px 2px rgba(133,133,133,0.71);
-  }
+.memoryCard.flip {
+  transform: rotateY(180deg);/*the angle on which we will flip teh card*/
+}
 
-  
-  .flip-card-front {
+
+
+.hiddenOverlay{
+       display: none; 
       position: absolute;
-      margin: 0px 0px 0px 16px;
-      height: 200px;
-      width: 200px;
-      background: #095a5a;
-      border-radius: 5px;
-      border: 5px; 
-      box-shadow: 4px 2px 2px 1px grey; 
-      color:  rgb(244, 205, 88);
-  }
+      
+      width: 100%;
+      height: 60%;
+      background-color: rgba(0, 0, 0, 0.8);
+      z-index: 2;
+      
+      cursor: pointer; 
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+}
+
+.overLay h2{
+  font-size: 4rem;
+  font-family: sans-serif;
+  color: white;
+  margin: 95px;
+}
   
+}
+header > .scorePanel {
+  align-items: center;
+}
+.scorePanel {
+  width: 100%;
+  height: 100px;
+}
+
+button {
+  width: 150px;
+  padding: 10px 12px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+
+button {
+  background-color: white; 
+  color: black; 
+  border: 2px solid #008CBA;
+}
   
-  .flip-card-back{
-      margin: 0px 0px 0px 16px;
-      height: 200px;
-      width: 200px;
-      background:  rgb(244, 205, 88);
-      color:#095a5a;
-      border-radius: 5px;
-      border: 5px; 
-      box-shadow: 4px 2px 2px 1px grey;
-      transform: rotateY(180deg); 
-  }
-  
-
-  h1 { 
-    font-family: oswald;
-    font-size: 25px;
-    font-weight: 600;
- 
-    align-content: center;
-    margin: 80px 0px 0px 4px;
-  }
-
-  .overLay{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .hiddenOverlay{
-        display: none;
-        position: absolute;
-        
-        width: 100%;
-        height: 60%;
-        background-color: rgba(0, 0, 0, 0.8);
-        z-index: 2;
-        
-        cursor: pointer; 
-  }
-
-  .overLay h2{
-    font-size: 6rem;
-    font-family: sans-serif;
-    color: white;
-    
-  }
+button:hover {
+  background-color: #008CBA;
+  color: white;
+}
 
 
+/***
     @media (max-width: 300px){
-    .allButtons {
+    .allCards {
         grid-template-columns: repeat (2, auto);
     }
 
@@ -149,3 +143,4 @@ body {
     }
 
   }
+/***
