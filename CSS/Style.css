@@ -98,7 +98,7 @@ h1 {
   margin: 95px;
 }
   
-}
+
 header > .scorePanel {
   align-items: center;
 }
@@ -129,18 +129,3 @@ button:hover {
   background-color: #008CBA;
   color: white;
 }
-
-
-/***
-    @media (max-width: 300px){
-    .allCards {
-        grid-template-columns: repeat (2, auto);
-    }
-
-    .memoryGame {
-        flex-direction: column;
-        align-items: center;
-    }
-
-  }
-/***

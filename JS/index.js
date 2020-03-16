@@ -2,9 +2,11 @@ let numArray = [];
 var allNumberCards = null;
 let allCards = document.querySelectorAll('.memoryCard');
 let score = 0;
+
 shuffleCards();
 displayScore();
 refreshGame();
+
 function shuffleCards(){  
     allNumberCards = document.querySelectorAll('.cardNumber');
 
